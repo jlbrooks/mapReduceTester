@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% load static %}
+
+  <title>MapReduce Tester</title>
+
+  <link rel="stylesheet" type="text/css" href="{% static "css/index.css" %}">
+</head>
+<body>
+<h1>Submit New Test</h1>
+<form action="submit" method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  <label for="java_file">File to test</label>
+  <input type="file" name="java_file" value="">
+  <input type="submit" value="Submit">
+</form>
+
+<h2>Output</h2>
+<p>{{ message }}</p>
+</body>
+</html>
